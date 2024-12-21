@@ -58,7 +58,7 @@ const Header = ({ activeHeading }) => {
         <div className="hidden  sm:flex items-center justify-between mt-4">
           <div>
             <Link to="/">
-              <h1>Multi vendor ecommerce</h1>
+              <img src="ryuga.png" className="w-14 h-14 object-contain" />
             </Link>
           </div>
           {/* search box */}
