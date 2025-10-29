@@ -84,6 +84,7 @@ const EventCard = ({ active, data }) => {
   const dispatch = useDispatch();
 
   const addToCartHandler = (data) => {
+    if (!data) return;
     const isItemExists = cart && cart.find((i) => i._id === data._id);
     if (isItemExists) {
       toast.error("Item already in cart!");
@@ -97,47 +98,48 @@ const EventCard = ({ active, data }) => {
       }
     }
   };
+
+  if (!data) {
+    return <div className="p-3">Loading...</div>;
+  }
   return (
-    <div
+   <div
       className={`w-full block bg-green-200 rounded-lg ${
         active ? "unset" : "mb-12"
       } lg:flex p-2 mb-2`}
     >
-      <div className="w-full lg:-w[50%] m-auto ">
-        {data?.images && data.images.length > 0 ? (
+      <div className="w-full lg:w-[50%] m-auto">
+        {data.images?.length > 0 ? (
           <img src={data.images[0]?.url} alt="" className="w-[90%]" />
         ) : (
           <div className="w-[90%] h-[200px] flex items-center justify-center bg-gray-200 rounded">
             <span>No Image</span>
           </div>
         )}
-        {/* <img
-          src={`${data.images && data.images[0]?.url}`}
-          alt=""
-          className="w-[90%]"
-        /> */}
-        {/* <img src={`${backend_url}/img/product/${data.images && data.images[0]}`} alt="" className="w-[90%]" /> */}
       </div>
-      <div className="w-full lg:[w-50%] flex flex-col justify-center">
-        <h3 className={`${styles.productTitle}`}>{data?.name}</h3>
-        <p>{data?.description}</p>
+
+      <div className="w-full lg:w-[50%] flex flex-col justify-center">
+        <h3 className={styles.productTitle}>{data.name}</h3>
+        <p>{data.description}</p>
         <div className="flex py-2 justify-between">
           <div className="flex">
             <h5 className="font-[500px] text-[18px] text-[#d55b45] pr-3 line-through">
-              {data?.originalPrice}$
+              {data.originalPrice}$
             </h5>
             <h5 className="font-bold text-[20px] text-[#333] font-Roboto">
-              {data?.discountPrice}$
+              {data.discountPrice}$
             </h5>
           </div>
           <span className="pr-3 font-[400px] text-[20px] text-[#44a55e]">
-            {data?.sold_out} sold
+            {data.sold_out} sold
           </span>
         </div>
+
         <EventCountDown data={data} />
         <br />
+
         <div className="flex items-center">
-          <Link to={`/product/${data?._id}?isEvent=true`}>
+          <Link to={`/product/${data._id}?isEvent=true`}>
             <div className={`${styles.button} text-[#fff]`}>See Details</div>
           </Link>
           <div
