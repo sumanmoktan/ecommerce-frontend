@@ -9,6 +9,7 @@ import styles from "../styles/Style";
 
 const ProductsPage = () => {
   const { allProducts } = useSelector((state) => state.products);
+  console.log(allProducts);
   const [searchParams] = useSearchParams();
   const categoryData = searchParams.get("category");
   const [data, setData] = useState([]);

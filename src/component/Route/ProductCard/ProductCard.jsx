@@ -63,7 +63,6 @@ const ProductCard = ({ data, isEvent }) => {
     }
   };
 
-
   return (
     <>
       <div className="w-full h-[330px] bg-green-200 rounded-lg shadow-sm p-3 relative cursor-pointer">
@@ -77,7 +76,7 @@ const ProductCard = ({ data, isEvent }) => {
         >
           <img
             // src={`${backend_url}/img/product/${data.images && data.images[0]}`}
-             src={data.images && data.images[0]?.url}
+            src={data.images && data.images[0]?.url}
             alt=""
             className="w-full h-[170px] object-contain"
           />
