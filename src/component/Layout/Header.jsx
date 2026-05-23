@@ -39,7 +39,7 @@ const Header = ({ activeHeading }) => {
     const filteredProducts =
       allProducts &&
       allProducts.filter((product) =>
-        product.name.toLowerCase().includes(term.toLowerCase())
+        product.name.toLowerCase().includes(term.toLowerCase()),
       );
     setSearchData(filteredProducts);
   };
@@ -175,7 +175,8 @@ const Header = ({ activeHeading }) => {
                 {isAuthenticated ? (
                   <Link to="/profile" className="text-white">
                     <img
-                      src={`${backend_url}/img/users/${user.photo}`}
+                      // src={`${backend_url}/img/users/${user.photo}`}
+                      src={user.photo?.url}
                       className="w-[35px] h-[35px] rounded-full"
                       alt=""
                     />

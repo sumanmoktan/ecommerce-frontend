@@ -102,9 +102,12 @@ const ProductCardDetails = ({ setOpen, data }) => {
             <div className="block w-full sm:flex">
               <div className="w-full 800px:w-[50%]">
                 <img
-                  src={`${backend_url}/img/product/${
-                    data.images && data.images[0]
-                  }`}
+                  // src={`${backend_url}/img/product/${
+                  //   data.images && data.images[0]
+                  // }`}
+                  src={
+                    data.images && data.images[0]?.url
+                  }
                   alt=""
                 />
                 <div className="flex">

@@ -19,7 +19,7 @@ const Cart = ({ setOpenCart }) => {
 
   const totalPrice = cart.reduce(
     (acc, item) => acc + item.qty * item.discountPrice,
-    0
+    0,
   );
 
   const quantityChangeHandler = (data) => {
@@ -143,7 +143,8 @@ const SingleCart = ({ data, quantityChangeHandler, removeFromCartHandler }) => {
           </div>
         </div>
         <img
-          src={`${backend_url}/img/product/${data.images && data.images[0]}`}
+          // src={`${backend_url}/img/product/${data.images && data.images[0]}`}
+          src={`${data.images && data.images[0]?.url}`}
           alt=""
           className="w-[130px] h-min ml-2 mr-2 rounded-[5px]"
         />

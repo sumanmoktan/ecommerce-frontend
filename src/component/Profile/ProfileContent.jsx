@@ -75,7 +75,8 @@ const ProfileContent = ({ active }) => {
           <div className="flex justify-center w-full">
             <div className="relative">
               <img
-                src={`${backend_url}/img/users/${user.photo}`}
+                // src={`${backend_url}/img/users/${user.photo}`}
+                src={user?.photo?.url}
                 className="w-[150px] h-[150px] rounded-full object-cover border-[3px] border-[#3ad132]"
                 alt=""
               />
@@ -457,7 +458,7 @@ const ChangePassword = () => {
       .patch(
         `${server}/api/v1/user/update-user-password`,
         { oldPassword, newPassword, confirmPassword },
-        { withCredentials: true }
+        { withCredentials: true },
       )
       .then((res) => {
         toast.success(res.data.success);
@@ -558,8 +559,8 @@ const Address = () => {
           address1,
           address2,
           zipCode,
-          addressType
-        )
+          addressType,
+        ),
       );
       setOpen(false);
       setCountry("");

@@ -31,7 +31,6 @@ const ProductDetails = ({ data }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-
   useEffect(() => {
     dispatch(getAllProductsShop(data && data.shop._id));
     if (wishlist && wishlist.find((i) => i._id === data?._id)) {
@@ -85,7 +84,7 @@ const ProductDetails = ({ data }) => {
     products.reduce(
       (acc, product) =>
         acc + product.reviews.reduce((sum, review) => sum + review.rating, 0),
-      0
+      0,
     );
 
   const avg = totalRatings / totalReviewsLength || 0;
@@ -126,9 +125,10 @@ const ProductDetails = ({ data }) => {
                   onMouseMove={handleMouseMove}
                 >
                   <img
-                    src={`${backend_url}/img/product/${
-                      data.images && data.images[select]
-                    }`}
+                    // src={`${backend_url}/img/product/${
+                    //   data.images && data.images[select]
+                    // }`}
+                    src={data.images && data.images[select]?.url}
                     alt=""
                     className="w-full"
                   />
@@ -138,7 +138,8 @@ const ProductDetails = ({ data }) => {
                     <div
                       className="absolute top-0 left-full ml-5 w-[200px] h-[200px] border border-gray-400 overflow-hidden"
                       style={{
-                        backgroundImage: `url(${backend_url}/img/product/${data.images[select]})`,
+                        // backgroundImage: `url(${backend_url}/img/product/${data.images[select]})`,
+                        backgroundImage: `url(${data.images[select]?.url})`,
                         backgroundSize: "200%",
                         backgroundPosition: `${zoomPosition.x}% ${zoomPosition.y}%`,
                       }}
