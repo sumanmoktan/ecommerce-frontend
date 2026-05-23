@@ -18,9 +18,13 @@ const AllProduct = () => {
     dispatch(getAllProductsShop(seller._id));
   }, [dispatch, seller._id]);
 
-  const handleDelete = (id) => {
-    dispatch(deleteProduct(id));
-    window.location.reload();
+  // const handleDelete = (id) => {
+  //   dispatch(deleteProduct(id));
+  //   window.location.reload();
+  // };
+  const handleDelete = async (id) => {
+    await dispatch(deleteProduct(id));
+    dispatch(getAllProductsShop(seller._id));
   };
 
   const columns = [
