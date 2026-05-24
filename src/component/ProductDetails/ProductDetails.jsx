@@ -128,8 +128,7 @@ const ProductDetails = ({ data }) => {
                     // src={`${backend_url}/img/product/${
                     //   data.images && data.images[select]
                     // }`}
-                    // src={data.images && data.images[select]?.url}
-                    src={data?.images?.[0]?.url}
+                    src={data.images && data.images[0]?.url}
                     alt=""
                     className="w-full"
                   />
