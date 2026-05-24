@@ -12,7 +12,7 @@ export const createProduct =
     discountPrice,
     stock,
     shopId,
-    images
+    images,
   ) =>
   async (dispatch) => {
     try {
@@ -30,7 +30,7 @@ export const createProduct =
         discountPrice,
         stock,
         shopId,
-        images
+        images,
       );
       dispatch({
         type: "productCreateSuccess",
@@ -52,9 +52,9 @@ export const getAllProductsShop = (id) => async (dispatch) => {
     });
 
     const { data } = await axios.get(
-      `${server}/api/v1/product/get-all-products-shop/${id}`
+      `${server}/api/v1/product/get-all-products-shop/${id}`,
     );
-
+  
     dispatch({
       type: "getAllProductsShopSuccess",
       payload: data.products,
@@ -78,7 +78,7 @@ export const deleteProduct = (id) => async (dispatch) => {
       `${server}/api/v1/product/delete-shop-product/${id}`,
       {
         withCredentials: true,
-      }
+      },
     );
 
     dispatch({
@@ -127,7 +127,7 @@ export const getAllProducts = () => async (dispatch) => {
     });
 
     const { data } = await axios.get(
-      `${server}/api/v1/product/get-all-products`
+      `${server}/api/v1/product/get-all-products`,
     );
     dispatch({
       type: "getAllProductsSuccess",

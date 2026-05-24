@@ -82,7 +82,7 @@ const ProductCardDetails = ({ setOpen, data }) => {
     products.reduce(
       (acc, product) =>
         acc + product.reviews.reduce((sum, review) => sum + review.rating, 0),
-      0
+      0,
     );
 
   const avg = totalRatings / totalReviewsLength || 0;
@@ -102,13 +102,10 @@ const ProductCardDetails = ({ setOpen, data }) => {
             <div className="block w-full sm:flex">
               <div className="w-full 800px:w-[50%]">
                 <img
-                  // src={`${backend_url}/img/product/${
-                  //   data.images && data.images[0]
-                  // }`}
-                  src={
-                    data.images && data.images[0]?.url
-                  }
+                  // src={`${backend_url}/img/product/${data.images && data.images[0]}`}
+                  src={data.images && data.images[0]?.url}
                   alt=""
+                  className="w-full h-[170px] object-contain"
                 />
                 <div className="flex">
                   {/* <img
