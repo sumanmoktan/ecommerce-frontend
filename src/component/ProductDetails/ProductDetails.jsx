@@ -129,7 +129,7 @@ const ProductDetails = ({ data }) => {
                     //   data.images && data.images[select]
                     // }`}
                     // src={data.images && data.images[select]?.url}
-                    src={data?.images?.[select]?.url || data?.images?.[0]?.url}
+                    src={data?.images?.[0]?.url}
                     alt=""
                     className="w-full"
                   />
