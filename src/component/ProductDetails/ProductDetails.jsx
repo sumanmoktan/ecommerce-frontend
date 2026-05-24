@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "../../styles/Style";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -12,7 +12,7 @@ import Ratings from "./Ratings";
 import {
   AiFillHeart,
   AiOutlineHeart,
-  AiOutlineMessage,
+  // AiOutlineMessage,
   AiOutlineShoppingCart,
 } from "react-icons/ai";
 import { getAllProductsShop } from "../../redux/action/productAction";
@@ -28,7 +28,7 @@ const ProductDetails = ({ data }) => {
   const [select, setSelect] = useState(0);
   const [isZoomed, setIsZoomed] = useState(false);
   const [zoomPosition, setZoomPosition] = useState({ x: 0, y: 0 });
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -38,7 +38,7 @@ const ProductDetails = ({ data }) => {
     } else {
       setClick(false);
     }
-  }, [data, wishlist]);
+  }, [data, wishlist, dispatch]);
 
   const incrementCount = () => {
     setCount(count + 1);
@@ -280,7 +280,7 @@ const ProductDetailInfo = ({
   averageRating,
 }) => {
   const [active, setActive] = useState(1);
-  const { user } = useSelector((state) => state.user);
+  // const { user } = useSelector((state) => state.user);
   const { seller } = useSelector((state) => state.seller);
   return (
     <div className="bg-green-100 px-3 800px:px-10 py-2 rounded">

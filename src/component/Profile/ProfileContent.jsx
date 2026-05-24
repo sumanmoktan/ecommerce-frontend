@@ -20,7 +20,7 @@ import { toast } from "react-toastify";
 import { RxCross1 } from "react-icons/rx";
 import { Country, State } from "country-state-city";
 import axios from "axios";
-import { server, backend_url } from "../../server";
+import { server } from "../../server";
 import { getAllOrdersOfUser } from "../../redux/action/orderAction";
 
 const ProfileContent = ({ active }) => {
@@ -29,7 +29,7 @@ const ProfileContent = ({ active }) => {
   const [email, setEmail] = useState(user && user.email);
   const [phoneNumber, setPhoneNumber] = useState(user && user.phoneNumber);
   const [password, setPassword] = useState("");
-  const [photo, setPhoto] = useState(null);
+  // const [photo, setPhoto] = useState(null);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -41,7 +41,7 @@ const ProfileContent = ({ active }) => {
       toast.success(successMessage);
       dispatch({ type: "clearMessages" });
     }
-  }, [error, successMessage]);
+  }, [dispatch,error, successMessage]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -96,7 +96,7 @@ const ProfileContent = ({ active }) => {
           <br />
           <br />
           <div className="w-full px-5">
-            <form onSubmit={handleSubmit} aria-required={true}>
+            <form onSubmit={handleSubmit} required>
               <div className="w-full sm:flex block pb-3">
                 <div className=" w-[100%] sm:w-[50%]">
                   <label className="block pb-2">Full Name</label>
@@ -198,7 +198,7 @@ const AllOrders = () => {
 
   useEffect(() => {
     dispatch(getAllOrdersOfUser(user._id));
-  }, []);
+  }, [dispatch, user._id]);
 
   const columns = [
     { field: "id", headerName: "Order ID", minWidth: 150, flex: 0.7 },
@@ -282,7 +282,7 @@ const AllRefundOrders = () => {
 
   useEffect(() => {
     dispatch(getAllOrdersOfUser(user._id));
-  }, []);
+  }, [dispatch, user._id]);
 
   const eligibleOrders =
     orders && orders.filter((item) => item.status === "Processing refund");
@@ -369,7 +369,7 @@ const TrackOrder = () => {
 
   useEffect(() => {
     dispatch(getAllOrdersOfUser(user._id));
-  }, []);
+  }, [dispatch, user._id]);
 
   const columns = [
     { field: "id", headerName: "Order ID", minWidth: 150, flex: 0.7 },
@@ -477,7 +477,7 @@ const ChangePassword = () => {
       </h1>
       <div className="w-full">
         <form
-          aria-required
+          required
           onSubmit={passwordChangeHandler}
           className="flex flex-col items-center"
         >
@@ -593,7 +593,7 @@ const Address = () => {
               Add New Address
             </h1>
             <div className="w-full">
-              <form aria-required onSubmit={handleSubmit} className="w-full">
+              <form required onSubmit={handleSubmit} className="w-full">
                 <div className="w-full block p-4">
                   <div className="w-full pb-2">
                     <label className="block pb-2">Country</label>

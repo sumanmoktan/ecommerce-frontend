@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "../../../styles/Style";
 import { toast } from "react-toastify";
-import { backend_url } from "../../../server";
+// import { backend_url } from "../../../server";
 import {
   AiFillHeart,
-  AiFillStar,
+  // AiFillStar,
   AiOutlineHeart,
-  AiOutlineStar,
+  // AiOutlineStar,
   AiOutlineEye,
   AiOutlineShoppingCart,
 } from "react-icons/ai";
@@ -36,7 +36,7 @@ const ProductCard = ({ data, isEvent }) => {
     } else {
       setClick(false);
     }
-  }, [wishlist]);
+  }, [wishlist, data._id]);
 
   const removeFromWishlistHandler = (data) => {
     setClick(!click);

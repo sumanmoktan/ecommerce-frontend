@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "../../../styles/Style";
 import ProductCard from "../ProductCard/ProductCard";
-import { productData } from "../../../static/data";
+// import { productData } from "../../../static/data";
 import { useSelector } from "react-redux";
 
 const BestDeals = () => {

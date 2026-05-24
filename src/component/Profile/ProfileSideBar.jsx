@@ -5,7 +5,7 @@ import {toast} from 'react-toastify';
 import { RiLockPasswordLine } from "react-icons/ri";
 import {
   AiOutlineLogin,
-  AiOutlineMessage,
+  // AiOutlineMessage,
 } from "react-icons/ai";
 import { MdOutlineTrackChanges } from "react-icons/md";
 import { TbAddressBook } from "react-icons/tb";

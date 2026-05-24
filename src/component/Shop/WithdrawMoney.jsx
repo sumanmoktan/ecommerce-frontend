@@ -26,7 +26,7 @@ const WithdrawMoney = () => {
 
   useEffect(() => {
     dispatch(getAllOrdersOfShop(seller._id));
-  }, [dispatch]);
+  }, [dispatch, seller._id]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -48,7 +48,7 @@ const WithdrawMoney = () => {
         {
           withdrawMethod,
         },
-        { withCredentials: true }
+        { withCredentials: true },
       )
       .then((res) => {
         toast.success("Withdraw method added successfully!");
@@ -91,7 +91,7 @@ const WithdrawMoney = () => {
         .post(
           `${server}/api/v1/withdraw/create-withdraw-request`,
           { amount },
-          { withCredentials: true }
+          { withCredentials: true },
         )
         .then((res) => {
           toast.success("Withdraw money request is successful!");
@@ -277,7 +277,7 @@ const WithdrawMoney = () => {
                         <h5>
                           Account Number:{" "}
                           {"*".repeat(
-                            seller?.withdrawMethod.bankAccountNumber.length - 3
+                            seller?.withdrawMethod.bankAccountNumber.length - 3,
                           ) +
                             seller?.withdrawMethod.bankAccountNumber.slice(-3)}
                         </h5>

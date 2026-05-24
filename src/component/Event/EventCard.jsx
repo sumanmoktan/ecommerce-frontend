@@ -77,7 +77,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addTocart } from "../../redux/action/cartAction";
 import { toast } from "react-toastify";
-import { backend_url } from "../../server";
+// import { backend_url } from "../../server";
 
 const EventCard = ({ active, data }) => {
   const { cart } = useSelector((state) => state.cart);

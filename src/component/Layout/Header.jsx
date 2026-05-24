@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "../../styles/Style";
 import { Link } from "react-router-dom";
-import { productData, categoriesData } from "../../static/data";
+import { categoriesData } from "../../static/data";
 import DropDown from "./DropDown";
 import Navbar from "./Navbar";
 import {
@@ -58,7 +58,7 @@ const Header = ({ activeHeading }) => {
         <div className="hidden  sm:flex items-center justify-between mt-4">
           <div>
             <Link to="/">
-              <img src="ryuga.png" className="w-14 h-14 object-contain" />
+              <img src="ryuga.png" alt="ryuga" className="w-14 h-14 object-contain" />
             </Link>
           </div>
           {/* search box */}

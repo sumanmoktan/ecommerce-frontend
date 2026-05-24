@@ -43,7 +43,7 @@ import {
   AdminDashboardEvents,
   AdminDashboardWithdraw,
 } from "./routes/AdminRoute";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useEffect, useState } from "react";
 import Store from "./redux/Store";
@@ -58,7 +58,7 @@ import { server } from "./server";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import ProtectedAdminRoute from "./routes/ProtectedAdminRoute.js";
-import Recommendation from "./component/Recommendation/Recommendation.jsx";
+// import Recommendation from "./component/Recommendation/Recommendation.jsx";
 
 function App() {
   const [stripeApikey, setStripeApiKey] = useState("");

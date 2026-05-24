@@ -7,11 +7,11 @@ import {
   addToWishlist,
   removeFromWishlist,
 } from "../../../redux/action/wishlistAction";
-import { backend_url } from "../../../server";
+// import { backend_url } from "../../../server";
 import {
   AiFillHeart,
   AiOutlineHeart,
-  AiOutlineMessage,
+  // AiOutlineMessage,
   AiOutlineShoppingCart,
 } from "react-icons/ai";
 import { toast } from "react-toastify";
@@ -24,7 +24,7 @@ const ProductCardDetails = ({ setOpen, data }) => {
   const dispatch = useDispatch();
   const [count, setCount] = useState(1);
   const [click, setClick] = useState(false);
-  const [select, setSelect] = useState(false);
+  // const [select, setSelect] = useState(false);
 
   // const handleMessageSubmit = () => {
   //   // console.log(suman);
@@ -61,7 +61,7 @@ const ProductCardDetails = ({ setOpen, data }) => {
     } else {
       setClick(false);
     }
-  }, [wishlist]);
+  }, [wishlist, data._id]);
 
   const removeFromWishlistHandler = (data) => {
     setClick(!click);
