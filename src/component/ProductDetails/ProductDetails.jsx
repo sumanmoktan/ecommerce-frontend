@@ -128,7 +128,7 @@ const ProductDetails = ({ data }) => {
                     // src={`${backend_url}/img/product/${
                     //   data.images && data.images[select]
                     // }`}
-                    // src={data.images && data.images[select]?.url}
+                    src={data.images && data.images[select]?.url}
                     alt=""
                     className="w-full"
                   />
@@ -152,9 +152,10 @@ const ProductDetails = ({ data }) => {
                     data.images.map((image, index) => (
                       <div key={index} className="relative cursor-pointer mr-3">
                         <img
-                          src={`${backend_url}/img/product/${
-                            data.images && data.images[index]
-                          }`}
+                          // src={`${backend_url}/img/product/${
+                          //   data.images && data.images[index]
+                          // }`}
+                          src={image?.url}
                           alt=""
                           className={`h-[70px] overflow-hidden ${
                             select === index ? "border-2 border-green-600" : ""
