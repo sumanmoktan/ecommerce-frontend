@@ -1,4 +1,4 @@
-import { createReducer, createAction } from "@reduxjs/toolkit";
+import { createReducer } from "@reduxjs/toolkit";
 
 // Initial state
 const initialState = {

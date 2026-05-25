@@ -9,10 +9,10 @@ import { toast } from "react-toastify";
 
 const ShopSettings = () => {
   const { seller } = useSelector((state) => state.seller);
-  const [avatar, setAvatar] = useState();
+  // const [avatar, setAvatar] = useState();
   const [name, setName] = useState(seller && seller.name);
   const [description, setDescription] = useState(
-    seller && seller.description ? seller.description : ""
+    seller && seller.description ? seller.description : "",
   );
   const [address, setAddress] = useState(seller && seller.address);
   const [phoneNumber, setPhoneNumber] = useState(seller && seller.phoneNumber);
@@ -53,7 +53,7 @@ const ShopSettings = () => {
           phoneNumber,
           description,
         },
-        { withCredentials: true }
+        { withCredentials: true },
       )
       .then((res) => {
         toast.success("Shop info updated succesfully!");
@@ -90,7 +90,7 @@ const ShopSettings = () => {
 
         {/* shop info */}
         <form
-          aria-aria-required={true}
+          required={true}
           className="flex flex-col items-center"
           onSubmit={updateHandler}
         >

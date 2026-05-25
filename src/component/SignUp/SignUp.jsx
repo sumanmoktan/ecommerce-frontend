@@ -178,7 +178,7 @@ import axios from "axios";
 import { server } from "../../server";
 import { toast } from "react-toastify";
 
-const SignUp = () => {
+const SignUp = ({ data }) => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -304,7 +304,7 @@ const SignUp = () => {
                 <span className="inline-block h-8 w-8 rounded-full overflow-hidden">
                   {photo ? (
                     <img
-                      src={URL.createObjectURL(photo)}
+                      src={data.images && data.images.url}
                       alt="photo"
                       className="h-full w-full object-cover rounded-full"
                     />

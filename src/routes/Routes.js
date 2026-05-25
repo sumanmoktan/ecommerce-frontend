@@ -15,7 +15,7 @@ import PaymentPage from "../pages/PaymentPage";
 import OrderSuccessPage from "../pages/OrderSuccessPage";
 import OrderDetails from "../pages/OrderDetails";
 import TrackOrderPage from "../pages/TrackOrderPage";
-import Recommendation from "../component/Recommendation/Recommendation";
+// import Recommendation from "../component/Recommendation/Recommendation";
 
 export {
   LoginPage,

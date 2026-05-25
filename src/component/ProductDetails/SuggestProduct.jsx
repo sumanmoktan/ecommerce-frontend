@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { productData } from "../../static/data";
+// import { productData } from "../../static/data";
 import ProductCard from "../Route/ProductCard/ProductCard";
 import styles from "../../styles/Style";
 
@@ -11,7 +11,7 @@ const SuggestProduct = ({ data }) => {
   useEffect(() => {
     const d = allProducts && allProducts.filter((i) => i.category === data.category);
     setProductData(d);
-  }, []);
+  }, [allProducts, data.category]);
   return (
     <div className="bg-green-50">
       {data ? (

@@ -29,7 +29,7 @@ const ShopInfo = ({ isOwner }) => {
         console.log(error);
         setIsLoading(false);
       });
-  }, []);
+  }, [dispatch, id]);
 
   const logoutHandler = async () => {
     axios.get(`${server}/api/v1/shop/logout`, {

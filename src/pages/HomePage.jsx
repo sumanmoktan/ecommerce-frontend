@@ -7,7 +7,7 @@ import FeaturesProduct from "../component/Route/FeaturesProduct/FeaturesProduct"
 import Event from "../component/Event/Event";
 // import Sponsor from "../component/Route/Sponsor";
 import Footer from "../component/Layout/Footer";
-import Recommendation from "../component/Recommendation/Recommendation";
+// import Recommendation from "../component/Recommendation/Recommendation";
 
 
 const HomePage = () => {

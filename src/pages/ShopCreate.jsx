@@ -10,7 +10,7 @@ const ShopCreate = () => {
     if(isSeller === true){
       navigate(`/shop/${seller._id}`);
     }
-  }, [isSeller, seller])
+  }, [isSeller, seller, navigate])
 
   return (
     <div>

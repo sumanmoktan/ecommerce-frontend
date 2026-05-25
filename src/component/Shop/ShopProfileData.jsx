@@ -12,14 +12,14 @@ import { backend_url } from "../../server";
 const ShopProfileData = ({ isOwner }) => {
   const { products } = useSelector((state) => state.products);
   const { events } = useSelector((state) => state.events);
-  const {user} = useSelector((state)=>state.user);
+  // const {user} = useSelector((state)=>state.user);
   const { id } = useParams();
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getAllProductsShop(id));
     dispatch(getAllEventsShop(id));
-  }, [dispatch]);
+  }, [dispatch, id]);
 
   const [active, setActive] = useState(1);
 
